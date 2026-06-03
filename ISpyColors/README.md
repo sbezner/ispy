@@ -125,6 +125,14 @@ Announce color ─▶ live camera ─▶ shutter ─▶ analyze photo
   decided by **saturation + brightness**, not hue. A PASS needs enough matching
   pixels **and** a single contiguous blob (4-connected flood fill) — not scattered
   noise.
+  - **Tertiary colors get extra room.** Orange and purple are *narrow* hue
+    bands that real-world lighting easily pushes a pixel out of, so they're
+    widened (purple now claims the magenta-purples people actually call
+    "purple") and given a lower saturation floor for muted/pastel shades.
+    **Pink** is matched specially (`isPink`): it's a *tint* — a light or pale
+    red, plus the rose/magenta hues — so the plain hue band would mislabel
+    pinks as red (boundary) or white (too pale). See `hueBand`, `saturationFloor`
+    and `isPink`.
 - **Duplicate check** (`DuplicateDetector.swift`): on each color-PASS a Vision
   `VNFeaturePrintObservation` is generated and compared (`computeDistance`)
   against every feature print stored **this session**. Below threshold → duplicate;

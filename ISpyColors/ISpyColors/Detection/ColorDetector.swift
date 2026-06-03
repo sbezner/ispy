@@ -143,37 +143,78 @@ public struct ColorDetector: Sendable {
 
     /// Does a single pixel belong to `color`?
     ///
-    /// White / black / gray are decided by saturation + brightness (NOT hue),
-    /// exactly as the spec requires. Chromatic colors are decided by hue band,
-    /// gated by saturation/brightness so we don't match washed-out grays.
+    /// White / black / gray are decided by saturation + brightness (NOT hue).
+    /// Pink is decided specially (see `isPink`) because it's a *tint*, not a pure
+    /// hue. Every other chromatic color is decided by its hue band, gated by
+    /// saturation/brightness so we don't match washed-out grays.
     public func pixel(_ p: RGBPixel, matches color: GameColor) -> Bool {
         let c = hsv(from: p)
 
         switch color {
         case .white:
-            // Low saturation, bright. Relaxed so off-whites/pale things count.
-            return c.s <= 0.22 && c.v >= 0.72
+            // Low saturation, bright. Tightened a touch (was 0.22) so pale
+            // PASTELS — pale pink, peach, lavender — are NOT swallowed by white.
+            return c.s <= 0.16 && c.v >= 0.74
         case .black:
             // Dark, regardless of hue. Relaxed so deep shadows/charcoal count.
             return c.v <= 0.28
+        case .pink:
+            // Pink is a light/pale red, not a single hue — handled on its own.
+            return isPink(c)
         default:
-            // Chromatic: must be colorful and not too dark.
-            guard c.s >= minChromaSaturation, c.v >= minChromaValue else { return false }
+            // Chromatic: must be colorful and not too dark. Orange and purple
+            // get a LOWER saturation floor because real-world (and kid-toy)
+            // oranges/purples are often muted, and they're narrow-band colors
+            // that are easy to miss otherwise.
+            guard c.s >= saturationFloor(for: color), c.v >= minChromaValue else { return false }
             return Self.hueBand(color).contains(c.h)
         }
     }
 
+    /// Minimum saturation for a chromatic color to count. Orange and purple —
+    /// the two narrow tertiary bands the kid kept missing — are softened so
+    /// muted/pastel versions still register. Scales with `minChromaSaturation`
+    /// so the public knob still works.
+    func saturationFloor(for color: GameColor) -> Double {
+        switch color {
+        case .orange, .purple: return minChromaSaturation * 0.7
+        default:               return minChromaSaturation
+        }
+    }
+
+    /// Pink = a *light* or *pale* red, plus the magenta/rose hues. Pinks are
+    /// often low-saturation (pastel) and sit right on the red boundary, so the
+    /// plain hue-band test classified them as red, or — when very pale — as
+    /// white. This catches both the rosy-magenta hues and bright, washed-out
+    /// reds (salmon, hot pink, baby pink) that a child calls "pink".
+    func isPink(_ c: HSV) -> Bool {
+        guard c.v >= minChromaValue else { return false }
+        // Pinks are pastel: allow noticeably lower saturation than other hues.
+        let pinkFloor = minChromaSaturation * 0.55      // ≈ 0.11 by default
+        // 1. Rose / magenta-pink hues.
+        if c.h >= 305 && c.h < 345 && c.s >= pinkFloor { return true }
+        // 2. A light, not-too-saturated red reads as pink (salmon, baby pink).
+        let reddish = c.h >= 345 || c.h < 14
+        if reddish && c.v >= 0.80 && c.s >= pinkFloor && c.s <= 0.55 { return true }
+        return false
+    }
+
     /// Hue window (degrees) for each chromatic color. White/black are handled
     /// separately and return an empty band here.
+    ///
+    /// The circle is rebalanced so the hard tertiary colors get more room:
+    /// orange and purple are widened (and purple now claims the magenta-purples
+    /// people actually call "purple"), funded by trimming the oversized green
+    /// and blue bands. Pink is matched by `isPink`, not this table.
     static func hueBand(_ color: GameColor) -> HueBand {
         switch color {
-        case .red:    return HueBand(lower: 345, upper: 15)   // wraps around 0
-        case .orange: return HueBand(lower: 15, upper: 45)
-        case .yellow: return HueBand(lower: 45, upper: 70)
-        case .green:  return HueBand(lower: 70, upper: 170)
-        case .blue:   return HueBand(lower: 170, upper: 260)
-        case .purple: return HueBand(lower: 260, upper: 295)
-        case .pink:   return HueBand(lower: 295, upper: 345)
+        case .red:    return HueBand(lower: 345, upper: 14)   // wraps around 0
+        case .orange: return HueBand(lower: 14, upper: 45)
+        case .yellow: return HueBand(lower: 45, upper: 66)
+        case .green:  return HueBand(lower: 66, upper: 168)
+        case .blue:   return HueBand(lower: 168, upper: 252)
+        case .purple: return HueBand(lower: 252, upper: 305)
+        case .pink:   return HueBand(lower: 305, upper: 345)
         case .white, .black: return HueBand(lower: 0, upper: 0)
         }
     }

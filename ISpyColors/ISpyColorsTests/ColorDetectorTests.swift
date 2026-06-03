@@ -109,6 +109,53 @@ final class ColorDetectorTests: XCTestCase {
         }
     }
 
+    // The three colors the grandson kept missing: orange / purple / pink ----
+    //
+    // These are the narrow tertiary bands (plus pink, which is a *tint*). The
+    // cases below are realistic shades — pale, muted, or boundary — that the
+    // old logic mislabeled (pink→red/white, magenta-purple→pink, muted→gray).
+
+    private func passes(_ p: RGBPixel, _ color: GameColor) -> Bool {
+        detector.analyze(pixels: solid(p), width: 100, height: 100, target: color).passed
+    }
+
+    func testPalePinkReadsAsPinkNotWhiteOrRed() {
+        // Baby/pale pink (255,209,220): hue ~346°, low saturation. Used to fall
+        // into the red band or get called white.
+        let palePink = RGBPixel(r255: 255, g255: 209, b255: 220)
+        XCTAssertTrue(passes(palePink, .pink), "pale pink should be PINK")
+        XCTAssertFalse(passes(palePink, .white), "pale pink should NOT be white")
+    }
+
+    func testLightPinkAndSalmonReadAsPink() {
+        XCTAssertTrue(passes(RGBPixel(r255: 255, g255: 182, b255: 193), .pink), "light pink")
+        XCTAssertTrue(passes(RGBPixel(r255: 250, g255: 128, b255: 114), .pink), "salmon")
+        XCTAssertTrue(passes(RGBPixel(r255: 255, g255: 105, b255: 180), .pink), "hot pink")
+    }
+
+    func testSaturatedRedIsNotPink() {
+        // A deep, saturated red must stay red and NOT leak into pink.
+        XCTAssertFalse(passes(RGBPixel(r255: 200, g255: 20, b255: 20), .pink), "deep red ≠ pink")
+    }
+
+    func testMagentaPurpleReadsAsPurpleNotPink() {
+        // Classic web "purple" (128,0,128) is hue 300° — people call it purple,
+        // but the old band handed it to pink.
+        XCTAssertTrue(passes(RGBPixel(r255: 128, g255: 0, b255: 128), .purple), "purple")
+        XCTAssertFalse(passes(RGBPixel(r255: 128, g255: 0, b255: 128), .pink), "…and not pink")
+    }
+
+    func testMutedPurpleAndVioletReadAsPurple() {
+        XCTAssertTrue(passes(RGBPixel(r255: 147, g255: 112, b255: 219), .purple), "medium purple")
+        XCTAssertTrue(passes(RGBPixel(r255: 148, g255: 0, b255: 211), .purple), "violet")
+    }
+
+    func testMutedOrangeAndPeachReadAsOrange() {
+        XCTAssertTrue(passes(RGBPixel(r255: 255, g255: 140, b255: 0), .orange), "pure orange")
+        XCTAssertTrue(passes(RGBPixel(r255: 255, g255: 165, b255: 79), .orange), "muted/light orange")
+        XCTAssertTrue(passes(RGBPixel(r255: 230, g255: 126, b255: 34), .orange), "pumpkin orange")
+    }
+
     // Threshold is tunable --------------------------------------------------
 
     func testColorThresholdIsTunable() {
