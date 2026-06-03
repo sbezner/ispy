@@ -1,0 +1,16 @@
+Audio assets
+============
+
+win.m4a, fail.m4a
+  Source: Kenney (kenney.nl) — "Music Jingles" and "Digital Audio" packs.
+  License: Creative Commons Zero (CC0 1.0 Universal) — public domain,
+           no attribution required. Credit given here voluntarily.
+  Converted from .ogg to .m4a (AAC) for iOS playback.
+
+The app also uses Apple's built-in AVSpeechSynthesizer (text-to-speech) to say
+"I spy something <COLOR>!" — no audio assets are bundled for that.
+
+To swap in your own sounds: drop a `win.m4a` / `fail.m4a` (or .caf/.wav/.mp3 —
+update the extension in SoundEffects.swift) into this folder. The app prefers a
+bundled file and falls back to a built-in system sound if none is found.
+Good CC0 sources: kenney.nl/assets, mixkit.co/free-sound-effects, pixabay.com/sound-effects.
