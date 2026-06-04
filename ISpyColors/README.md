@@ -48,7 +48,7 @@ pipeline** (downsample → match-fraction → contiguous-blob) on a real photo �
 which is where lighting/highlight bugs hide (e.g. a deep magenta eggplant
 reading as pink). `tools/test_bank.py` is a faithful Python port of
 `ColorDetector` + `ImageAnalyzer` that runs photos listed in
-`photos/manifest.json` and asserts the colors the app **should** and **should
+`Photos/manifest.json` and asserts the colors the app **should** and **should
 not** find:
 
 ```
@@ -56,7 +56,7 @@ python3 tools/test_bank.py        # pass/fail report (non-zero exit on failure)
 python3 tools/test_bank.py -v     # also dump all 9 color scores per photo
 ```
 
-To add a case: drop a photo in `photos/` and add one manifest entry
+To add a case: drop a photo in `Photos/` and add one manifest entry
 (`expect_pass` / `expect_fail`). Photos of your own real objects are the most
 valuable cases. There's also `tools/color-tester.html` — a browser tool that
 runs the same logic for inspecting a single color or clicking pixels in a photo.
@@ -90,8 +90,8 @@ shades — pale pastels through deep/dark — all match.
   contiguous blob this big, so a room speckled with tiny dots won't pass.
 - `minChromaSaturation` / `minChromaValue` set how colorful/bright a pixel must
   be to count. **Lower** them to accept more washed-out or darker shades; raise
-  them if too many near-gray things match. (White uses `s ≤ 0.22, v ≥ 0.72` and
-  black uses `v ≤ 0.28` — also relaxed — in `pixel(_:matches:)`.)
+  them if too many near-gray things match. (White uses `s ≤ 0.16, v ≥ 0.74` and
+  black uses `v ≤ 0.28` in `pixel(_:matches:)`.)
 
 ### 2. Duplicate distance — how different a new object must be
 

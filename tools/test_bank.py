@@ -10,7 +10,7 @@ magenta eggplant scoring as pink instead of purple.
 
 This harness closes that gap. It is a faithful Python port of ColorDetector +
 ImageAnalyzer (keep the constants below in sync with the Swift source). It reads
-real photos listed in photos/manifest.json, runs each through the full pipeline,
+real photos listed in Photos/manifest.json, runs each through the full pipeline,
 and asserts the colors the app SHOULD and SHOULD NOT find.
 
 Usage:
@@ -20,7 +20,7 @@ Usage:
 Exit code is non-zero if any test fails, so it doubles as a regression check
 after tuning a color.
 
-Adding a test: drop a photo in photos/ and add an entry to photos/manifest.json:
+Adding a test: drop a photo in Photos/ and add an entry to Photos/manifest.json:
     { "file": "red_firetruck.jpeg", "label": "toy fire truck",
       "expect_pass": ["red"], "expect_fail": ["pink", "orange"] }
 
@@ -157,7 +157,7 @@ def downsample(path):
 #  Test bank runner
 # ---------------------------------------------------------------------------
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PHOTOS_DIR = os.path.join(REPO_ROOT, "photos")
+PHOTOS_DIR = os.path.join(REPO_ROOT, "Photos")
 MANIFEST = os.path.join(PHOTOS_DIR, "manifest.json")
 
 GREEN, RED, GRAY, BOLD, RESET = "\033[32m", "\033[31m", "\033[90m", "\033[1m", "\033[0m"
