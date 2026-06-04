@@ -41,6 +41,26 @@ Press **⌘U** (or *Product ▸ Test*). The unit tests live in **ISpyColorsTests
   star** while a **different object of the same color is accepted** — driving the
   same `DuplicateDetector` + `GameRules` path the game uses, minus the camera.
 
+#### Real-photo test bank (`tools/test_bank.py`)
+
+The Swift tests use flat pixel arrays; they don't run the **whole camera
+pipeline** (downsample → match-fraction → contiguous-blob) on a real photo —
+which is where lighting/highlight bugs hide (e.g. a deep magenta eggplant
+reading as pink). `tools/test_bank.py` is a faithful Python port of
+`ColorDetector` + `ImageAnalyzer` that runs photos listed in
+`photos/manifest.json` and asserts the colors the app **should** and **should
+not** find:
+
+```
+python3 tools/test_bank.py        # pass/fail report (non-zero exit on failure)
+python3 tools/test_bank.py -v     # also dump all 9 color scores per photo
+```
+
+To add a case: drop a photo in `photos/` and add one manifest entry
+(`expect_pass` / `expect_fail`). Photos of your own real objects are the most
+valuable cases. There's also `tools/color-tester.html` — a browser tool that
+runs the same logic for inspecting a single color or clicking pixels in a photo.
+
 ---
 
 ## 🎛️ The two thresholds you'll want to tune

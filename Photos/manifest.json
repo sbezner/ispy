@@ -1,0 +1,11 @@
+{
+  "_comment": "Real-photo test bank for tools/test_bank.py. Each entry: a photo in this folder, the colors the app SHOULD find (expect_pass) and SHOULD NOT find (expect_fail). Add your grandson's toys here to guard against regressions.",
+  "tests": [
+    {
+      "file": "5AD0687D-6F3A-457B-A828-551D173EA69F_1_105_c.jpeg",
+      "label": "bin of purple eggplants",
+      "expect_pass": ["purple"],
+      "expect_fail": ["pink"]
+    }
+  ]
+}
