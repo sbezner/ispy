@@ -147,8 +147,8 @@ const HUE_BANDS = {
   yellow:{ lo: 45,  hi: 66  },
   green: { lo: 66,  hi: 168 },
   blue:  { lo: 168, hi: 252 },
-  purple:{ lo: 252, hi: 305 },
-  pink:  { lo: 305, hi: 345 },   // pink is matched by isPink, not this band
+  purple:{ lo: 252, hi: 330 },   // through the magenta-purples (eggplant ≈ 319°)
+  pink:  { lo: 330, hi: 345 },   // pink is matched by isPink, not this band
 };
 
 function hueContains(band, h) {
@@ -164,7 +164,7 @@ function saturationFloor(color) {
 function isPink(c) {
   if (c.v < minChromaValue) return false;
   const pinkFloor = minChromaSaturation * 0.55;
-  if (c.h >= 305 && c.h < 345 && c.s >= pinkFloor) return true;
+  if (c.h >= 330 && c.h < 345 && c.s >= pinkFloor) return true;
   const reddish = c.h >= 345 || c.h < 14;
   if (reddish && c.v >= 0.80 && c.s >= pinkFloor && c.s <= 0.55) return true;
   return false;

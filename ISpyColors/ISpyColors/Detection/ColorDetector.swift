@@ -191,8 +191,10 @@ public struct ColorDetector: Sendable {
         guard c.v >= minChromaValue else { return false }
         // Pinks are pastel: allow noticeably lower saturation than other hues.
         let pinkFloor = minChromaSaturation * 0.55      // ≈ 0.11 by default
-        // 1. Rose / magenta-pink hues.
-        if c.h >= 305 && c.h < 345 && c.s >= pinkFloor { return true }
+        // 1. Rose / magenta-pink hues. The lower edge (330°) is the same line
+        //    purple stops at: deeper magentas below it (eggplant, plum) are
+        //    purple; the bright rosy tints above it are pink.
+        if c.h >= 330 && c.h < 345 && c.s >= pinkFloor { return true }
         // 2. A light, not-too-saturated red reads as pink (salmon, baby pink).
         let reddish = c.h >= 345 || c.h < 14
         if reddish && c.v >= 0.80 && c.s >= pinkFloor && c.s <= 0.55 { return true }
@@ -213,8 +215,8 @@ public struct ColorDetector: Sendable {
         case .yellow: return HueBand(lower: 45, upper: 66)
         case .green:  return HueBand(lower: 66, upper: 168)
         case .blue:   return HueBand(lower: 168, upper: 252)
-        case .purple: return HueBand(lower: 252, upper: 305)
-        case .pink:   return HueBand(lower: 305, upper: 345)
+        case .purple: return HueBand(lower: 252, upper: 330)   // through the magenta-purples (eggplant ≈ 319°)
+        case .pink:   return HueBand(lower: 330, upper: 345)
         case .white, .black: return HueBand(lower: 0, upper: 0)
         }
     }

@@ -150,6 +150,18 @@ final class ColorDetectorTests: XCTestCase {
         XCTAssertTrue(passes(RGBPixel(r255: 148, g255: 0, b255: 211), .purple), "violet")
     }
 
+    func testMagentaPurpleEggplantReadsAsPurpleNotPink() {
+        // Eggplant skin is a deep, magenta-leaning purple — hue ~315-320°, which
+        // used to fall past the purple band into pink. (Real photo: a bin of
+        // eggplants scored 0.2% purple / 23.8% pink before the 330° boundary.)
+        for egg in [RGBPixel(r255: 120, g255: 60, b255: 130),   // dusky eggplant
+                    RGBPixel(r255: 150, g255: 20, b255: 110),   // deep magenta
+                    RGBPixel(r255: 102, g255: 51, b255: 102)] { // plum
+            XCTAssertTrue(passes(egg, .purple), "eggplant/plum should be PURPLE")
+            XCTAssertFalse(passes(egg, .pink), "…and not pink")
+        }
+    }
+
     func testMutedOrangeAndPeachReadAsOrange() {
         XCTAssertTrue(passes(RGBPixel(r255: 255, g255: 140, b255: 0), .orange), "pure orange")
         XCTAssertTrue(passes(RGBPixel(r255: 255, g255: 165, b255: 79), .orange), "muted/light orange")
