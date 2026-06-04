@@ -1,20 +1,374 @@
 {
-  "_comment": "Real-photo test bank for tools/test_bank.py. Each entry: a photo in this folder, the colors the app SHOULD find (expect_pass) and SHOULD NOT find (expect_fail). Add your grandson's toys here to guard against regressions. The optional source/license/attribution fields document where a photo came from; the harness ignores them.",
+  "_comment": "Real-photo test bank for tools/test_bank.py. Each entry: a photo in this folder, the colors the app SHOULD find (expect_pass) and SHOULD NOT find (expect_fail). Add your grandson's toys here to guard against regressions. The optional source/license/attribution fields document where a photo came from (PD/CC0/CC-BY from Wikimedia Commons); the harness ignores them.",
   "tests": [
     {
       "file": "5AD0687D-6F3A-457B-A828-551D173EA69F_1_105_c.jpeg",
       "label": "bin of purple eggplants",
-      "expect_pass": ["purple"],
-      "expect_fail": ["pink"]
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "pink"
+      ]
     },
     {
       "file": "red_apple.jpg",
       "label": "red apple on white background",
-      "expect_pass": ["red"],
-      "expect_fail": ["blue", "green", "purple"],
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "blue",
+        "green",
+        "purple"
+      ],
       "source": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg",
       "license": "CC BY 2.0",
       "attribution": "Abhijit Tembhekar (via Wikimedia Commons)"
+    },
+    {
+      "file": "red_2-x-cherry-nebula-tomato-2017-a.jpg",
+      "label": "red: 2 x cherry nebula tomato 2017 a",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2_x_Cherry_Nebula_tomato_2017_A.jpg",
+      "license": "CC0",
+      "attribution": "Fructibus"
+    },
+    {
+      "file": "red_3-x-cherry-nebula-tomato-2017-a1.jpg",
+      "label": "red: 3 x cherry nebula tomato 2017 a1",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:3_x_Cherry_Nebula_tomato_2017_A1.jpg",
+      "license": "CC0",
+      "attribution": "Fructibus"
+    },
+    {
+      "file": "red_3-x-cherry-nebula-tomato-2017-a2.jpg",
+      "label": "red: 3 x cherry nebula tomato 2017 a2",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:3_x_Cherry_Nebula_tomato_2017_A2.jpg",
+      "license": "CC0",
+      "attribution": "Fructibus"
+    },
+    {
+      "file": "orange_112-superb-varieties-for-market-gardeners-season-o.jpg",
+      "label": "orange: 112 superb varieties for market gardeners season o",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:112_superb_varieties_for_market_gardeners_season_of_1926_(Page_12)_BHL42917231.jpg",
+      "license": "Public domain",
+      "attribution": "Francis C. Stokes & Co.; Henry G. Gilbert Nursery and Seed Trade Catalog Collect"
+    },
+    {
+      "file": "orange_1894-garden-and-farm-1891-manual-page-39-bhl426060.jpg",
+      "label": "orange: 1894 garden and farm 1891 manual page 39 bhl426060",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:1894_garden_and_farm_1891_manual_(Page_39)_BHL42606081.jpg",
+      "license": "Public domain",
+      "attribution": "Henry G. Gilbert Nursery and Seed Trade Catalog Collection.; Johnson & Stokes."
+    },
+    {
+      "file": "orange_20150916-osec-lsc-0114-21450696420.jpg",
+      "label": "orange: 20150916 osec lsc 0114 21450696420",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:20150916-OSEC-LSC-0114_(21450696420).jpg",
+      "license": "Public domain",
+      "attribution": "U.S. Department of Agriculture\n\nLance Cheung"
+    },
+    {
+      "file": "yellow_banana-1.jpg",
+      "label": "yellow: banana 1",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Banana_(1).jpg",
+      "license": "Public domain",
+      "attribution": "Renee Comet (Photographer)"
+    },
+    {
+      "file": "yellow_banana-fruit.jpg",
+      "label": "yellow: banana fruit",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Banana_Fruit.JPG",
+      "license": "Public domain",
+      "attribution": "ZooFari"
+    },
+    {
+      "file": "yellow_banana-on-white-background.jpg",
+      "label": "yellow: banana on white background",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Banana_on_white_background.jpg",
+      "license": "Public domain",
+      "attribution": "Paolo Neo"
+    },
+    {
+      "file": "green_370photos-taken-during-the-2020-coronavirus-pandem.jpg",
+      "label": "green: 370photos taken during the 2020 coronavirus pandem",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "red",
+        "blue",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:370Photos_taken_during_the_2020_coronavirus_pandemic_in_Baliuag_01.jpg",
+      "license": "CC0",
+      "attribution": "Judgefloro"
+    },
+    {
+      "file": "green_bell-pepper.jpg",
+      "label": "green: bell pepper",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "red",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:BELL_PEPPER.jpg",
+      "license": "CC0",
+      "attribution": "Oghenevwogaga Amos"
+    },
+    {
+      "file": "green_2015-365-242-apple-harvest-20837555490.jpg",
+      "label": "green: 2015 365 242 apple harvest 20837555490",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2015-365-242_Apple_Harvest_(20837555490).jpg",
+      "license": "CC0",
+      "attribution": "cogdogblog"
+    },
+    {
+      "file": "blue_a-generous-handful-of-blueberries-depicts-the-rich.jpg",
+      "label": "blue: a generous handful of blueberries depicts the rich",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:A_generous_handful_of_blueberries_depicts_the_rich_abundance_of_berries_that_may_be_found_in_Alaskan_areas._(d84880d1-1dd8-b71b-0b3d-6380eca4c663).jpg",
+      "license": "Public domain",
+      "attribution": "NPS photo"
+    },
+    {
+      "file": "blue_aberdeenshire-blueberries.jpg",
+      "label": "blue: aberdeenshire blueberries",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Aberdeenshire_blueberries.jpg",
+      "license": "CC0",
+      "attribution": "Mx. Granger"
+    },
+    {
+      "file": "purple_upload-from-mobile-1752670713-img-20240626-141027-.jpg",
+      "label": "purple: upload from mobile 1752670713 img 20240626 141027 ",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:(Upload-from-mobile-1752670713)IMG_20240626_141027_1.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Thushara Prasannan"
+    },
+    {
+      "file": "purple_2007-01-04helleborus04.jpg",
+      "label": "purple: 2007 01 04helleborus04",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [],
+      "source": "https://commons.wikimedia.org/wiki/File:2007-01-04Helleborus04.jpg",
+      "license": "CC BY 2.5",
+      "attribution": "Wildfeuer"
+    },
+    {
+      "file": "purple_2007-02-15helleborus03.jpg",
+      "label": "purple: 2007 02 15helleborus03",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [],
+      "source": "https://commons.wikimedia.org/wiki/File:2007-02-15Helleborus03.jpg",
+      "license": "CC BY 2.5",
+      "attribution": "Wildfeuer"
+    },
+    {
+      "file": "pink_pink-nerium.jpg",
+      "label": "pink: pink nerium",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%22Pink_Nerium%22.JPG",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Arivumathi"
+    },
+    {
+      "file": "pink_sakura-in-the-park-side-png.jpg",
+      "label": "pink: sakura in the park side png",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [],
+      "source": "https://commons.wikimedia.org/wiki/File:%22sakura_in_the_park_side.png%22.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Marshmallowc"
+    },
+    {
+      "file": "pink_002-2016-07-03-rosa.jpg",
+      "label": "pink: 002 2016 07 03 rosa",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:002_2016_07_03_Rosa.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Friedrich Haag"
+    },
+    {
+      "file": "white_fot-andrew-skowron-46608750885.jpg",
+      "label": "white: fot andrew skowron 46608750885",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%22_fot._Andrew_Skowron_(46608750885).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Otwarte Klatki"
+    },
+    {
+      "file": "white_chick-fot-andrew-skowron-46608750885.jpg",
+      "label": "white: chick fot andrew skowron 46608750885",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%22Chick%22_fot._Andrew_Skowron_(46608750885).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Otwarte Klatki"
+    },
+    {
+      "file": "black_cat_in_window.jpg",
+      "label": "black: cat in window",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "blue",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%D0%A7%D1%91%D1%80%D0%BD%D0%B0%D1%8F_%D0%BA%D0%BE%D1%88%D0%BA%D0%B0_%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B8%D1%82_%D0%B2_%D0%BE%D0%BA%D0%BD%D0%BE.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Бурый Артём"
+    },
+    {
+      "file": "black_13-italian-automotive-engineering-alfa-romeo-4c-ch.jpg",
+      "label": "black: 13 italian automotive engineering alfa romeo 4c ch",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%22_13_-_ITALIAN_automotive_engineering_-_Alfa_Romeo_4C_chassis_-_monocoque_carbon_fiber_-_aluminum_platform_(architecture)_DxO_08.jpg",
+      "license": "CC BY 2.0 it",
+      "attribution": "youkeys"
     }
   ]
 }
