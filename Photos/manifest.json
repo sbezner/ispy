@@ -1,11 +1,20 @@
 {
-  "_comment": "Real-photo test bank for tools/test_bank.py. Each entry: a photo in this folder, the colors the app SHOULD find (expect_pass) and SHOULD NOT find (expect_fail). Add your grandson's toys here to guard against regressions.",
+  "_comment": "Real-photo test bank for tools/test_bank.py. Each entry: a photo in this folder, the colors the app SHOULD find (expect_pass) and SHOULD NOT find (expect_fail). Add your grandson's toys here to guard against regressions. The optional source/license/attribution fields document where a photo came from; the harness ignores them.",
   "tests": [
     {
       "file": "5AD0687D-6F3A-457B-A828-551D173EA69F_1_105_c.jpeg",
       "label": "bin of purple eggplants",
       "expect_pass": ["purple"],
       "expect_fail": ["pink"]
+    },
+    {
+      "file": "red_apple.jpg",
+      "label": "red apple on white background",
+      "expect_pass": ["red"],
+      "expect_fail": ["blue", "green", "purple"],
+      "source": "https://commons.wikimedia.org/wiki/File:Red_Apple.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Abhijit Tembhekar (via Wikimedia Commons)"
     }
   ]
 }
