@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>I Spy: Colors — Color Recognition Tester</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font-family: -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+    max-width: 880px; margin: 0 auto; padding: 16px 18px 64px; line-height: 1.45;
+  }
+  h1 { font-size: 1.4rem; margin: 0 0 2px; }
+  .sub { color: #888; margin: 0 0 20px; font-size: .9rem; }
+  h2 { font-size: 1.05rem; margin: 28px 0 10px; border-bottom: 1px solid #8884; padding-bottom: 4px; }
+  .row { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+  .card { border: 1px solid #8884; border-radius: 12px; padding: 14px 16px; }
+  input[type=color] { width: 64px; height: 64px; border: none; background: none; cursor: pointer; }
+  input[type=text] { font: inherit; padding: 6px 8px; width: 110px; border-radius: 8px; border: 1px solid #8888; }
+  .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+  .big-swatch { width: 110px; height: 110px; border-radius: 14px; border: 1px solid #8886; }
+  .stat { font-size: .9rem; }
+  .stat b { display: inline-block; min-width: 116px; color: #888; font-weight: 500; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+  .pill {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 5px 12px 5px 8px; border-radius: 999px; font-weight: 600; font-size: .92rem;
+    border: 1px solid #0003;
+  }
+  .pill .dot { width: 16px; height: 16px; border-radius: 50%; border: 1px solid #0004; }
+  .none { color: #999; font-style: italic; }
+  /* hue bar */
+  .huebar { position: relative; height: 46px; border-radius: 8px; margin-top: 8px; overflow: hidden;
+    background: linear-gradient(to right,
+      hsl(0,90%,55%), hsl(30,90%,55%), hsl(60,90%,50%), hsl(120,80%,42%),
+      hsl(180,75%,45%), hsl(240,85%,60%), hsl(280,80%,55%), hsl(320,85%,58%), hsl(360,90%,55%));
+  }
+  .band { position: absolute; top: 0; bottom: 0; border-left: 2px solid #000a; }
+  .band span { position: absolute; top: 2px; left: 3px; font-size: .62rem; color: #000c;
+    font-weight: 700; text-shadow: 0 0 3px #fffa, 0 0 3px #fffa; }
+  .huemark { position: absolute; top: -4px; bottom: -4px; width: 3px; background: #fff;
+    box-shadow: 0 0 0 1.5px #000, 0 0 6px #000; }
+  table { border-collapse: collapse; width: 100%; font-size: .9rem; margin-top: 6px; }
+  th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid #8883; }
+  th { color: #888; font-weight: 600; }
+  td.num { font-family: ui-monospace, Menlo, monospace; text-align: right; }
+  .pass { color: #18a558; font-weight: 700; }
+  .fail { color: #c0392b; }
+  #photoCanvas { width: 300px; height: 300px; image-rendering: pixelated;
+    border-radius: 12px; border: 1px solid #8886; cursor: crosshair; touch-action: none; }
+  .hint { font-size: .82rem; color: #888; margin-top: 6px; }
+  code { background: #8882; padding: 1px 5px; border-radius: 5px; }
+  details { margin-top: 22px; } summary { cursor: pointer; color: #888; }
+</style>
+</head>
+<body>
+
+<h1>🔍 I Spy: Colors — Recognition Tester</h1>
+<p class="sub">Runs the <em>exact</em> classification logic from <code>ColorDetector.swift</code> + the
+100×100 downsample from <code>ImageAnalyzer.swift</code>. What this page says is what the app decides.</p>
+
+<h2>1 · Test a single color</h2>
+<div class="row">
+  <div class="card row">
+    <input type="color" id="picker" value="#46bd4d">
+    <div>
+      <div><input type="text" id="hex" class="mono" value="#46BD4D"></div>
+      <div class="hint">pick a color or type a hex</div>
+    </div>
+  </div>
+  <div class="big-swatch" id="bigSwatch"></div>
+  <div>
+    <div class="stat"><b>RGB</b><span class="mono" id="rgbOut"></span></div>
+    <div class="stat"><b>HSV</b><span class="mono" id="hsvOut"></span></div>
+    <div class="stat"><b>App calls it</b></div>
+    <div class="pills" id="matchPills"></div>
+  </div>
+</div>
+
+<div class="huebar" id="huebar"></div>
+<p class="hint">Hue bands the app uses. The white marker is the current color's hue.
+White / black / pink are <em>not</em> decided by hue alone — see the pills above.</p>
+
+<h2>2 · Test a real photo</h2>
+<p class="hint">Upload a photo of an object your grandson is pointing at. It's squished to 100×100
+(exactly what the app sees), then every color is scored. <b>Click any pixel</b> to inspect it.</p>
+<div class="row">
+  <div>
+    <input type="file" id="file" accept="image/*"><br><br>
+    <canvas id="photoCanvas" width="100" height="100"></canvas>
+    <div class="hint" id="pixelInfo">— click a pixel —</div>
+  </div>
+  <div style="flex:1; min-width:280px;">
+    <table id="scoreTable">
+      <thead><tr><th>Color</th><th>match %</th><th>blob %</th><th>verdict</th></tr></thead>
+      <tbody></tbody>
+    </table>
+    <p class="hint">PASS needs <b>match ≥ 3%</b> <em>and</em> a contiguous <b>blob ≥ 2%</b>.</p>
+  </div>
+</div>
+
+<details>
+<summary>What the thresholds mean / how to tune</summary>
+<p class="hint" style="line-height:1.6">
+These mirror the Swift defaults. Edit them at the top of the <code>&lt;script&gt;</code> to preview tuning:
+<code>minMatchFraction=0.03</code>, <code>minBlobFraction=0.02</code>,
+<code>minChromaSaturation=0.20</code>, <code>minChromaValue=0.18</code>.
+Orange &amp; purple use a saturation floor of <code>0.20×0.7=0.14</code>; pink uses <code>0.20×0.55=0.11</code>.
+Changing them here does <b>not</b> change the app — port any winning values back into <code>ColorDetector.swift</code>.
+</p>
+</details>
+
+<script>
+// ===========================================================================
+//  PORT OF ColorDetector.swift  (keep in sync with the Swift source)
+// ===========================================================================
+const minMatchFraction   = 0.03;
+const minBlobFraction    = 0.02;
+const minChromaSaturation = 0.20;
+const minChromaValue      = 0.18;
+
+const COLORS = ["red","orange","yellow","green","blue","purple","pink","white","black"];
+
+// Swatch colors from GameColor+UI.swift (for display only).
+const SWATCH = {
+  red:"#E62929", orange:"#FF8C00", yellow:"#FFD91A", green:"#29BD4D",
+  blue:"#2173F2", purple:"#9940D9", pink:"#FF73B3", white:"#FFFFFF", black:"#111111",
+};
+
+// RGB (0..1) -> HSV  (h 0..360, s 0..1, v 0..1) — mirrors ColorDetector.hsv
+function hsv(r, g, b) {
+  const maxC = Math.max(r, g, b), minC = Math.min(r, g, b), delta = maxC - minC;
+  let h = 0;
+  if (delta > 0) {
+    if (maxC === r)      h = 60 * ((((g - b) / delta) % 6));
+    else if (maxC === g) h = 60 * (((b - r) / delta) + 2);
+    else                 h = 60 * (((r - g) / delta) + 4);
+  }
+  if (h < 0) h += 360;
+  const s = maxC === 0 ? 0 : delta / maxC;
+  return { h, s, v: maxC };
+}
+
+const HUE_BANDS = {
+  red:   { lo: 345, hi: 14  },   // wraps 0
+  orange:{ lo: 14,  hi: 45  },
+  yellow:{ lo: 45,  hi: 66  },
+  green: { lo: 66,  hi: 168 },
+  blue:  { lo: 168, hi: 252 },
+  purple:{ lo: 252, hi: 305 },
+  pink:  { lo: 305, hi: 345 },   // pink is matched by isPink, not this band
+};
+
+function hueContains(band, h) {
+  return band.lo <= band.hi ? (h >= band.lo && h < band.hi)
+                            : (h >= band.lo || h < band.hi);
+}
+
+function saturationFloor(color) {
+  return (color === "orange" || color === "purple")
+    ? minChromaSaturation * 0.7 : minChromaSaturation;
+}
+
+function isPink(c) {
+  if (c.v < minChromaValue) return false;
+  const pinkFloor = minChromaSaturation * 0.55;
+  if (c.h >= 305 && c.h < 345 && c.s >= pinkFloor) return true;
+  const reddish = c.h >= 345 || c.h < 14;
+  if (reddish && c.v >= 0.80 && c.s >= pinkFloor && c.s <= 0.55) return true;
+  return false;
+}
+
+// Does pixel (r,g,b in 0..1) match `color`? — mirrors ColorDetector.pixel
+function pixelMatches(r, g, b, color) {
+  const c = hsv(r, g, b);
+  if (color === "white") return c.s <= 0.16 && c.v >= 0.74;
+  if (color === "black") return c.v <= 0.28;
+  if (color === "pink")  return isPink(c);
+  if (c.s < saturationFloor(color) || c.v < minChromaValue) return false;
+  return hueContains(HUE_BANDS[color], c.h);
+}
+
+// Largest 4-connected component — mirrors largestConnectedComponent
+function largestBlob(mask, w, h) {
+  const visited = new Uint8Array(mask.length);
+  let best = 0; const stack = [];
+  for (let start = 0; start < mask.length; start++) {
+    if (!mask[start] || visited[start]) continue;
+    let size = 0; stack.length = 0; stack.push(start); visited[start] = 1;
+    while (stack.length) {
+      const idx = stack.pop(); size++;
+      const x = idx % w, y = (idx / w) | 0;
+      if (x > 0     && mask[idx-1] && !visited[idx-1]) { visited[idx-1]=1; stack.push(idx-1); }
+      if (x < w-1   && mask[idx+1] && !visited[idx+1]) { visited[idx+1]=1; stack.push(idx+1); }
+      if (y > 0     && mask[idx-w] && !visited[idx-w]) { visited[idx-w]=1; stack.push(idx-w); }
+      if (y < h-1   && mask[idx+w] && !visited[idx+w]) { visited[idx+w]=1; stack.push(idx+w); }
+    }
+    if (size > best) best = size;
+  }
+  return best;
+}
+
+// Whole-image analysis for one target — mirrors ColorDetector.analyze
+function analyze(pixels, w, h, target) {
+  const total = w * h;
+  const mask = new Uint8Array(total);
+  let matchCount = 0;
+  for (let i = 0; i < total; i++) {
+    if (pixelMatches(pixels[i*3], pixels[i*3+1], pixels[i*3+2], target)) { mask[i]=1; matchCount++; }
+  }
+  const matchFraction = matchCount / total;
+  const blobFraction = largestBlob(mask, w, h) / total;
+  return { matchFraction, blobFraction,
+           passed: matchFraction >= minMatchFraction && blobFraction >= minBlobFraction };
+}
+
+// ===========================================================================
+//  UI
+// ===========================================================================
+const $ = id => document.getElementById(id);
+
+function hexToRgb255(hex) {
+  hex = hex.replace('#','').trim();
+  if (hex.length === 3) hex = hex.split('').map(c=>c+c).join('');
+  if (!/^[0-9a-fA-F]{6}$/.test(hex)) return null;
+  return [parseInt(hex.slice(0,2),16), parseInt(hex.slice(2,4),16), parseInt(hex.slice(4,6),16)];
+}
+const pad = n => n.toString(16).padStart(2,'0');
+const rgbToHex = (r,g,b) => '#' + pad(r)+pad(g)+pad(b);
+
+function colorPill(color) {
+  return `<span class="pill" style="background:${SWATCH[color]}22">
+    <span class="dot" style="background:${SWATCH[color]}"></span>${color.toUpperCase()}</span>`;
+}
+
+function updateSingle(r255, g255, b255) {
+  const r=r255/255, g=g255/255, b=b255/255;
+  const c = hsv(r,g,b);
+  $('bigSwatch').style.background = rgbToHex(r255,g255,b255);
+  $('rgbOut').textContent = `${r255}, ${g255}, ${b255}`;
+  $('hsvOut').textContent = `H ${c.h.toFixed(0)}°  S ${(c.s*100).toFixed(0)}%  V ${(c.v*100).toFixed(0)}%`;
+
+  const matches = COLORS.filter(col => pixelMatches(r,g,b,col));
+  $('matchPills').innerHTML = matches.length
+    ? matches.map(colorPill).join('')
+    : `<span class="none">— no color (counts as gray / background) —</span>`;
+
+  // hue marker
+  $('huemark').style.left = (c.h/360*100) + '%';
+}
+
+// Build hue bar band markers once
+(function buildHueBar(){
+  const bar = $('huebar');
+  for (const [name, band] of Object.entries(HUE_BANDS)) {
+    if (name === 'pink' || name === 'red') continue; // pink≠pure-hue; red wraps, label at 345
+    const d = document.createElement('div');
+    d.className = 'band'; d.style.left = (band.lo/360*100)+'%';
+    d.innerHTML = `<span>${name} ${band.lo}°</span>`;
+    bar.appendChild(d);
+  }
+  // red start (wrap) marker
+  const rd = document.createElement('div');
+  rd.className='band'; rd.style.left=(345/360*100)+'%';
+  rd.innerHTML=`<span>red 345°</span>`; bar.appendChild(rd);
+  const m = document.createElement('div'); m.className='huemark'; m.id='huemark'; bar.appendChild(m);
+})();
+
+$('picker').addEventListener('input', e => {
+  $('hex').value = e.target.value.toUpperCase();
+  const [r,g,b] = hexToRgb255(e.target.value);
+  updateSingle(r,g,b);
+});
+$('hex').addEventListener('input', e => {
+  const rgb = hexToRgb255(e.target.value);
+  if (!rgb) return;
+  $('picker').value = rgbToHex(...rgb);
+  updateSingle(...rgb);
+});
+updateSingle(...hexToRgb255('#46BD4D'));
+
+// ---- Photo tester ----
+const canvas = $('photoCanvas'); const ctx = canvas.getContext('2d', { willReadFrequently: true });
+let imgData = null;   // Uint8Array of normalized? we keep 0..1 floats
+let floatPixels = null;
+
+$('file').addEventListener('change', e => {
+  const f = e.target.files[0]; if (!f) return;
+  const img = new Image();
+  img.onload = () => {
+    ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'medium';
+    ctx.clearRect(0,0,100,100);
+    ctx.drawImage(img, 0, 0, 100, 100);          // squish to square — matches the app
+    const data = ctx.getImageData(0,0,100,100).data;
+    floatPixels = new Float64Array(100*100*3);
+    for (let i=0;i<100*100;i++){
+      floatPixels[i*3]   = data[i*4]/255;
+      floatPixels[i*3+1] = data[i*4+1]/255;
+      floatPixels[i*3+2] = data[i*4+2]/255;
+    }
+    scorePhoto();
+    URL.revokeObjectURL(img.src);
+  };
+  img.src = URL.createObjectURL(f);
+});
+
+function scorePhoto() {
+  const tbody = $('scoreTable').querySelector('tbody');
+  tbody.innerHTML = COLORS.map(col => {
+    const a = analyze(floatPixels, 100, 100, col);
+    const verdict = a.passed ? `<span class="pass">★ PASS</span>` : `<span class="fail">no</span>`;
+    return `<tr>
+      <td><span class="dot" style="display:inline-block;width:12px;height:12px;border-radius:50%;
+        background:${SWATCH[col]};border:1px solid #0004;vertical-align:middle"></span>
+        &nbsp;${col}</td>
+      <td class="num">${(a.matchFraction*100).toFixed(1)}</td>
+      <td class="num">${(a.blobFraction*100).toFixed(1)}</td>
+      <td>${verdict}</td></tr>`;
+  }).join('');
+}
+
+function sampleAt(clientX, clientY) {
+  if (!floatPixels) return;
+  const rect = canvas.getBoundingClientRect();
+  const x = Math.floor((clientX - rect.left) / rect.width  * 100);
+  const y = Math.floor((clientY - rect.top)  / rect.height * 100);
+  if (x<0||y<0||x>=100||y>=100) return;
+  const i = (y*100+x);
+  const r=floatPixels[i*3], g=floatPixels[i*3+1], b=floatPixels[i*3+2];
+  const c = hsv(r,g,b);
+  const matches = COLORS.filter(col => pixelMatches(r,g,b,col));
+  $('pixelInfo').innerHTML =
+    `pixel (${x},${y}) · RGB ${Math.round(r*255)},${Math.round(g*255)},${Math.round(b*255)} · ` +
+    `H${c.h.toFixed(0)}° S${(c.s*100).toFixed(0)}% V${(c.v*100).toFixed(0)}% → ` +
+    (matches.length ? `<b>${matches.map(m=>m.toUpperCase()).join(' / ')}</b>` : `<i>gray/none</i>`);
+  // also sync the single-color tester
+  $('picker').value = rgbToHex(Math.round(r*255),Math.round(g*255),Math.round(b*255));
+  $('hex').value = $('picker').value.toUpperCase();
+  updateSingle(Math.round(r*255),Math.round(g*255),Math.round(b*255));
+}
+canvas.addEventListener('click', e => sampleAt(e.clientX, e.clientY));
+canvas.addEventListener('pointermove', e => { if (e.buttons) sampleAt(e.clientX, e.clientY); });
+</script>
+</body>
+</html>
