@@ -369,6 +369,1432 @@
       "source": "https://commons.wikimedia.org/wiki/File:%22_13_-_ITALIAN_automotive_engineering_-_Alfa_Romeo_4C_chassis_-_monocoque_carbon_fiber_-_aluminum_platform_(architecture)_DxO_08.jpg",
       "license": "CC BY 2.0 it",
       "attribution": "youkeys"
+    },
+    {
+      "file": "red_365-first-tomatoes-28515790072.jpg",
+      "label": "red: 365 first tomatoes 28515790072",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:-365_first_tomatoes_(28515790072).jpg",
+      "license": "CC0",
+      "attribution": "terri_bateman"
+    },
+    {
+      "file": "red_2021080604-victorinox-alox-swiss-army-1-steckt.jpg",
+      "label": "red: 2021080604 victorinox alox swiss army 1 steckt",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "orange",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2021080604_Victorinox_Alox_Swiss_Army_1_steckt_in_Tomate_2021.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "VSchagow"
+    },
+    {
+      "file": "red_500px-photo-39215016.jpg",
+      "label": "red: 500px photo 39215016",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:500px_photo_(39215016).jpeg",
+      "license": "CC BY 3.0",
+      "attribution": "Rosa Elena Méndez Meza"
+    },
+    {
+      "file": "red_dailyshoot-2010-10-11-let-s-start-out-the-new-.jpg",
+      "label": "red: dailyshoot 2010 10 11 let s start out the new ",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:@dailyshoot-_2010-10-11-_Let%27s_start_out_the_new_week_by_making_a_photo_with_a_red_point_of_interest._Make_sure_your_subject_really_stands_out._-ds330_(5073842069).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "cogdogblog"
+    },
+    {
+      "file": "red_a-box-of-red-tomatoes-at-yuen-long.jpg",
+      "label": "red: a box of red tomatoes at yuen long",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:A_Box_of_Red_Tomatoes_at_Yuen_Long.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Peachyeung316"
+    },
+    {
+      "file": "red_a-vegetable-vendor-jpg-04.jpg",
+      "label": "red: a vegetable vendor jpg 04",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:A_vegetable_vendor_jpg_04.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Faịlụ a na-enye nkọwapụta ohere azụmaahịa nwa nwoke Hausa na-ahụ maka ya. Achọrọ"
+    },
+    {
+      "file": "red_adaskako-tomatea.jpg",
+      "label": "red: adaskako tomatea",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Adaskako_tomatea.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Gaztarrotz"
+    },
+    {
+      "file": "red_aesthetic-tomatoes-of-salem.jpg",
+      "label": "red: aesthetic tomatoes of salem",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Aesthetic_Tomatoes_of_Salem.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Thamizhpparithi Maari"
+    },
+    {
+      "file": "red_african-tomatoes.jpg",
+      "label": "red: african tomatoes",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:African_tomatoes.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "ChimaBee"
+    },
+    {
+      "file": "red_agrofidanishtja-havolli-tomato-s.jpg",
+      "label": "red: agrofidanishtja havolli tomato s",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:AgroFidanishtja_Havolli_tomato%27s.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "AgroFidanishtjaHavolli"
+    },
+    {
+      "file": "red_ash-on-red-tomato.jpg",
+      "label": "red: ash on red tomato",
+      "expect_pass": [
+        "red"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Ash_on_red_tomato.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Oregon State University"
+    },
+    {
+      "file": "orange_img.jpg",
+      "label": "orange: img",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:(%D8%AE%D8%B6%D8%A7%D8%B1_(%D8%B3%D9%81%D9%86%D8%A7%D8%B1%D9%8A%D8%A9_%2B%D9%84%D9%81%D8%AA).JPG",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Ovva olfa"
+    },
+    {
+      "file": "orange_panoramio-2709.jpg",
+      "label": "orange: panoramio 2709",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:-_panoramio_(2709).jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "josefstuefer"
+    },
+    {
+      "file": "orange_10-heriloom-carrots.jpg",
+      "label": "orange: 10 heriloom carrots",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:10_heriloom_carrots.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Stacy Spensley"
+    },
+    {
+      "file": "orange_112-superb-varieties-for-market-gardeners-seas.jpg",
+      "label": "orange: 112 superb varieties for market gardeners seas",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:112_superb_varieties_for_market_gardeners_season_of_1926_(Page_12)_BHL42917231.jpg",
+      "license": "Public domain",
+      "attribution": "Francis C. Stokes & Co.; Henry G. Gilbert Nursery and Seed Trade Catalog Collect"
+    },
+    {
+      "file": "orange_130th-sandringham-flower-show-27-07-2011-60829.jpg",
+      "label": "orange: 130th sandringham flower show 27 07 2011 60829",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:130th_Sandringham_Flower_Show_27-07-2011_(6082916465).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Karen Roe"
+    },
+    {
+      "file": "orange_1894-garden-and-farm-1891-manual-page-39-bhl42.jpg",
+      "label": "orange: 1894 garden and farm 1891 manual page 39 bhl42",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:1894_garden_and_farm_1891_manual_(Page_39)_BHL42606081.jpg",
+      "license": "Public domain",
+      "attribution": "Henry G. Gilbert Nursery and Seed Trade Catalog Collection.; Johnson & Stokes."
+    },
+    {
+      "file": "orange_2000-kienzle-dia-11.jpg",
+      "label": "orange: 2000 kienzle dia 11",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2000-Kienzle-Dia_(11).jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Helmut Kienzle"
+    },
+    {
+      "file": "orange_2013-365-219-new-garden-harvest-9464324056.jpg",
+      "label": "orange: 2013 365 219 new garden harvest 9464324056",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "red",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2013-365-219_New_Garden_Harvest_(9464324056).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "cogdogblog"
+    },
+    {
+      "file": "orange_20150916-osec-lsc-0128-21017588433.jpg",
+      "label": "orange: 20150916 osec lsc 0128 21017588433",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:20150916-OSEC-LSC-0128_(21017588433).jpg",
+      "license": "Public domain",
+      "attribution": "U.S. Department of Agriculture\n\nLance Cheung"
+    },
+    {
+      "file": "orange_20150916-osec-lsc-0142-21614533886.jpg",
+      "label": "orange: 20150916 osec lsc 0142 21614533886",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "green",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:20150916-OSEC-LSC-0142_(21614533886).jpg",
+      "license": "Public domain",
+      "attribution": "U.S. Department of Agriculture\n\nLance Cheung"
+    },
+    {
+      "file": "orange_20150916-osec-lsc-0155-21629244322.jpg",
+      "label": "orange: 20150916 osec lsc 0155 21629244322",
+      "expect_pass": [
+        "orange"
+      ],
+      "expect_fail": [
+        "green",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:20150916-OSEC-LSC-0155_(21629244322).jpg",
+      "license": "Public domain",
+      "attribution": "U.S. Department of Agriculture\n\nLance Cheung"
+    },
+    {
+      "file": "yellow_2016-10-29-01-04-31-recup.jpg",
+      "label": "yellow: 2016 10 29 01 04 31 recup",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2016-10-29_01-04-31_recup.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Thomas Bresson"
+    },
+    {
+      "file": "yellow_a-bunch-of-bananas.jpg",
+      "label": "yellow: a bunch of bananas",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:A_bunch_of_bananas.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "User Carioca"
+    },
+    {
+      "file": "yellow_assistant-under-acting-deputy-banana-republic-.jpg",
+      "label": "yellow: assistant under acting deputy banana republic ",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Assistant-under-acting-deputy_banana_republic_general_ribbon.png",
+      "license": "CC0",
+      "attribution": "Neuropol"
+    },
+    {
+      "file": "yellow_baby-bananas-for-sale.jpg",
+      "label": "yellow: baby bananas for sale",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Baby_bananas_for_sale.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "BrokenSegue"
+    },
+    {
+      "file": "yellow_bana-3806777363.jpg",
+      "label": "yellow: bana 3806777363",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:BaNa..._(3806777363).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Basheer Olakara"
+    },
+    {
+      "file": "yellow_banana-2.jpg",
+      "label": "yellow: banana 2",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Banana_(2).jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Ferdous"
+    },
+    {
+      "file": "yellow_banana-2516487176.jpg",
+      "label": "yellow: banana 2516487176",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Banana_(2516487176).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Anthony Easton from Montreal, canada"
+    },
+    {
+      "file": "yellow_banana-54284068573.jpg",
+      "label": "yellow: banana 54284068573",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Banana_(54284068573).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Choo Yut Shing from Singapore, Singapore"
+    },
+    {
+      "file": "yellow_banana-8.jpg",
+      "label": "yellow: banana 8",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Banana_8.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Gaurav Dhwaj Khadka"
+    },
+    {
+      "file": "yellow_banana-bonita.jpg",
+      "label": "yellow: banana bonita",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Banana_bonita.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Mayrlla Duarte"
+    },
+    {
+      "file": "yellow_banana-bunch-on-wall.jpg",
+      "label": "yellow: banana bunch on wall",
+      "expect_pass": [
+        "yellow"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Banana_bunch_on_wall.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Rangbaz"
+    },
+    {
+      "file": "green_370photos-taken-during-the-2020-coronavirus-pa.jpg",
+      "label": "green: 370photos taken during the 2020 coronavirus pa",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "red",
+        "blue",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:370Photos_taken_during_the_2020_coronavirus_pandemic_in_Baliuag_01.jpg",
+      "license": "CC0",
+      "attribution": "Judgefloro"
+    },
+    {
+      "file": "green_aesthetic-bell-peppers.jpg",
+      "label": "green: aesthetic bell peppers",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Aesthetic_bell_peppers.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Thamizhpparithi Maari"
+    },
+    {
+      "file": "green_bell-pepper-with-internal-proliferation.jpg",
+      "label": "green: bell pepper with internal proliferation",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Bell_Pepper_with_Internal_Proliferation.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Salil Kumar Mukherjee"
+    },
+    {
+      "file": "green_bell-peppers-from-the-garden-120856553.jpg",
+      "label": "green: bell peppers from the garden 120856553",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "red",
+        "blue",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Bell_Peppers_From_The_Garden_(120856553).jpeg",
+      "license": "CC BY 3.0",
+      "attribution": "Rob Bertholf"
+    },
+    {
+      "file": "green_bell-peppers-mercado-de-arroios-lisbon-portuga.jpg",
+      "label": "green: bell peppers mercado de arroios lisbon portuga",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Bell_peppers,_Mercado_de_Arroios,_Lisbon,_Portugal_julesvernex2.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Jules Verne Times Two"
+    },
+    {
+      "file": "green_capsicum-annuum-fruits-imgp0044.jpg",
+      "label": "green: capsicum annuum fruits imgp0044",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Capsicum_annuum_fruits_IMGP0044.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Nikodem Nijaki"
+    },
+    {
+      "file": "green_capsicum-annuum-fruits-imgp0049.jpg",
+      "label": "green: capsicum annuum fruits imgp0049",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Capsicum_annuum_fruits_IMGP0049.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Nikodem Nijaki"
+    },
+    {
+      "file": "green_capsicum-annuum-in-aveyron-2.jpg",
+      "label": "green: capsicum annuum in aveyron 2",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "red",
+        "blue",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Capsicum_annuum_in_Aveyron_(2).jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Krzysztof Golik"
+    },
+    {
+      "file": "green_capsicum3.jpg",
+      "label": "green: capsicum3",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Capsicum3.JPG",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Ilanga"
+    },
+    {
+      "file": "green_carrot-and-green-pepper-30th-april.jpg",
+      "label": "green: carrot and green pepper 30th april",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "yellow",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Carrot_and_green_pepper_30th_April.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Sasu photography"
+    },
+    {
+      "file": "green_090913-0010afvx.jpg",
+      "label": "green: 090913 0010afvx",
+      "expect_pass": [
+        "green"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:090913-0010AFVX.JPG",
+      "license": "CC BY-SA 3.0",
+      "attribution": "General Sisi"
+    },
+    {
+      "file": "blue_a-generous-handful-of-blueberries-depicts-the-.jpg",
+      "label": "blue: a generous handful of blueberries depicts the ",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:A_generous_handful_of_blueberries_depicts_the_rich_abundance_of_berries_that_may_be_found_in_Alaskan_areas._(d84880d1-1dd8-b71b-0b3d-6380eca4c663).jpg",
+      "license": "Public domain",
+      "attribution": "NPS photo"
+    },
+    {
+      "file": "blue_abby-blueberries-machine-picking-blueberries-i.jpg",
+      "label": "blue: abby blueberries machine picking blueberries i",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "red",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Abby_Blueberries_-_machine_picking_blueberries_in_July.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Arbutus99"
+    },
+    {
+      "file": "blue_antioxidant-berries-bilberry-988870.jpg",
+      "label": "blue: antioxidant berries bilberry 988870",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Antioxidant-berries-bilberry-988870.jpg",
+      "license": "CC0",
+      "attribution": "rawpixel.com"
+    },
+    {
+      "file": "blue_blueberries-3442288145.jpg",
+      "label": "blue: blueberries 3442288145",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Blueberries_(3442288145).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Kyle McDonald from Brooklyn, New York, USA"
+    },
+    {
+      "file": "blue_blueberries-3442289155.jpg",
+      "label": "blue: blueberries 3442289155",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Blueberries_(3442289155).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Kyle McDonald from Brooklyn, New York, USA"
+    },
+    {
+      "file": "blue_blueberries-3442289729.jpg",
+      "label": "blue: blueberries 3442289729",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Blueberries_(3442289729).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Kyle McDonald from Brooklyn, New York, USA"
+    },
+    {
+      "file": "blue_blueberries-3442291079.jpg",
+      "label": "blue: blueberries 3442291079",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Blueberries_(3442291079).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Kyle McDonald from Brooklyn, New York, USA"
+    },
+    {
+      "file": "blue_blueberries-3443104974.jpg",
+      "label": "blue: blueberries 3443104974",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Blueberries_(3443104974).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Kyle McDonald from Brooklyn, New York, USA"
+    },
+    {
+      "file": "blue_blueberries-3443107818.jpg",
+      "label": "blue: blueberries 3443107818",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Blueberries_(3443107818).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Kyle McDonald from Brooklyn, New York, USA"
+    },
+    {
+      "file": "blue_blueberries-52187526180.jpg",
+      "label": "blue: blueberries 52187526180",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Blueberries_(52187526180).jpg",
+      "license": "CC0",
+      "attribution": "Alabama Extension"
+    },
+    {
+      "file": "blue_gentiana-clusii-01.jpg",
+      "label": "blue: gentiana clusii 01",
+      "expect_pass": [
+        "blue"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:-_Gentiana_clusii_01_-.jpg",
+      "license": "CC BY-SA 2.5",
+      "attribution": "User:Nino Barbieri"
+    },
+    {
+      "file": "purple_upload-from-mobile-1752670713-img-20240626-141.jpg",
+      "label": "purple: upload from mobile 1752670713 img 20240626 141",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:(Upload-from-mobile-1752670713)IMG_20240626_141027_1.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Thushara Prasannan"
+    },
+    {
+      "file": "purple_2007-02-15helleborus05.jpg",
+      "label": "purple: 2007 02 15helleborus05",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [],
+      "source": "https://commons.wikimedia.org/wiki/File:2007-02-15Helleborus05.jpg",
+      "license": "CC BY 2.5",
+      "attribution": "Wildfeuer"
+    },
+    {
+      "file": "purple_50-2003-7324100186.jpg",
+      "label": "purple: 50 2003 7324100186",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [],
+      "source": "https://commons.wikimedia.org/wiki/File:50%E7%A8%AE%E9%A1%9E_2003_(7324100186).jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "judam6"
+    },
+    {
+      "file": "purple_5664-schynige-platte-scutellaria-alpina.jpg",
+      "label": "purple: 5664 schynige platte scutellaria alpina",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:5664_-_Schynige_Platte_-_Scutellaria_alpina.JPG",
+      "license": "CC BY-SA 2.5",
+      "attribution": "Andrew Bossi"
+    },
+    {
+      "file": "purple_5665-schynige-platte-scutellaria-alpina.jpg",
+      "label": "purple: 5665 schynige platte scutellaria alpina",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:5665_-_Schynige_Platte_-_Scutellaria_alpina.JPG",
+      "license": "CC BY-SA 2.5",
+      "attribution": "Andrew Bossi"
+    },
+    {
+      "file": "purple_a-purple-wildflower.jpg",
+      "label": "purple: a purple wildflower",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "yellow",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:A_purple_wildflower.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Treekangaroosandlions 2"
+    },
+    {
+      "file": "purple_a-stroll-in-my-grandma-s-garden.jpg",
+      "label": "purple: a stroll in my grandma s garden",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:A_stroll_in_my_Grandma%27s_garden.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Mimk0205"
+    },
+    {
+      "file": "purple_abejorro-01.jpg",
+      "label": "purple: abejorro 01",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Abejorro_01.jpg",
+      "license": "CC BY 3.0",
+      "attribution": "Jorge Barrios"
+    },
+    {
+      "file": "purple_abejorro-02.jpg",
+      "label": "purple: abejorro 02",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Abejorro_02.jpg",
+      "license": "CC BY 3.0",
+      "attribution": "Jorge Barrios"
+    },
+    {
+      "file": "purple_first-time-35478902300.jpg",
+      "label": "purple: first time 35478902300",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "orange",
+        "yellow",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:First_Time_(35478902300).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Tiomax80"
+    },
+    {
+      "file": "purple_lavanda-sah-si-uxur-q-b-l-k-q-b-l-r.jpg",
+      "label": "purple: lavanda sah si uxur q b l k q b l r",
+      "expect_pass": [
+        "purple"
+      ],
+      "expect_fail": [
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Lavanda_sah%C9%99si_-_%C3%87uxur_Q%C9%99b%C9%99l%C9%99_k_-_Q%C9%99b%C9%99l%C9%99_r.jpg",
+      "license": "CC0",
+      "attribution": "Sefer azeri"
+    },
+    {
+      "file": "pink_2007-03-20kalanchoe-blossfeldiana19.jpg",
+      "label": "pink: 2007 03 20kalanchoe blossfeldiana19",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [
+        "yellow",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2007-03-20Kalanchoe_blossfeldiana19.jpg",
+      "license": "CC BY 2.5",
+      "attribution": "Wildfeuer"
+    },
+    {
+      "file": "pink_2008-07-14impatiens-walleriana144.jpg",
+      "label": "pink: 2008 07 14impatiens walleriana144",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2008-07-14Impatiens_walleriana144.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Wildfeuer"
+    },
+    {
+      "file": "pink_auwiv-2020-10.jpg",
+      "label": "pink: auwiv 2020 10",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [],
+      "source": "https://commons.wikimedia.org/wiki/File:AUWIV_2020_(10).jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Moheen Reeyad"
+    },
+    {
+      "file": "pink_balloons-kayess-1-cropped.jpg",
+      "label": "pink: balloons kayess 1 cropped",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Balloons-KayEss-1_(cropped).jpeg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons"
+    },
+    {
+      "file": "pink_balloons-kayess-1.jpg",
+      "label": "pink: balloons kayess 1",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [
+        "orange",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Balloons-KayEss-1.jpeg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Wikimedia Commons"
+    },
+    {
+      "file": "pink_balloonsimgp6329.jpg",
+      "label": "pink: balloonsimgp6329",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:BalloonsIMGP6329.JPG",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Avjoska"
+    },
+    {
+      "file": "pink_florian-klauer-14840.jpg",
+      "label": "pink: florian klauer 14840",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Florian-klauer-14840.jpg",
+      "license": "CC0",
+      "attribution": "Florian Klauer"
+    },
+    {
+      "file": "pink_gay-israel-7700514638.jpg",
+      "label": "pink: gay israel 7700514638",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Gay_Israel_(7700514638).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Neil Ward"
+    },
+    {
+      "file": "pink_guinness-world-record-for-editing-wikipedia-wa.jpg",
+      "label": "pink: guinness world record for editing wikipedia wa",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [],
+      "source": "https://commons.wikimedia.org/wiki/File:Guinness_World_Record_for_editing_Wikipedia,_Warsaw_39.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "MOs810"
+    },
+    {
+      "file": "pink_pink-balloon-on-a-white-chair.jpg",
+      "label": "pink: pink balloon on a white chair",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Pink_balloon_on_a_white_chair.jpg",
+      "license": "CC0",
+      "attribution": "Florian Klauer florianklauer"
+    },
+    {
+      "file": "pink_royal-liberty-morris-with-molly-at-broadstairs.jpg",
+      "label": "pink: royal liberty morris with molly at broadstairs",
+      "expect_pass": [
+        "pink"
+      ],
+      "expect_fail": [
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Royal_Liberty_Morris_with_%27molly%27_at_Broadstairs_Folk_Week_2017,_Kent,_England_8.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Acabashi"
+    },
+    {
+      "file": "white_have-eggs-when-eggs-are-scarce-hatch-early-pro.jpg",
+      "label": "white: have eggs when eggs are scarce hatch early pro",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%22Have_Eggs_When_Eggs_Are_Scarce._Hatch_Early...Produce_Fall_and_Winter_Eggs.%22_-_NARA_-_512545.jpg",
+      "license": "Public domain",
+      "attribution": "Unknown authorUnknown author or not provided"
+    },
+    {
+      "file": "white_2-huevos-de-distintas-especies-de-gallinas-21.jpg",
+      "label": "white: 2 huevos de distintas especies de gallinas 21",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "red",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2_Huevos_de_distintas_especies_de_gallinas_21.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "MONUMENTA"
+    },
+    {
+      "file": "white_2016-08-03-00-42-29-recup.jpg",
+      "label": "white: 2016 08 03 00 42 29 recup",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "green",
+        "blue",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2016-08-03_00-42-29_recup.jpg",
+      "license": "CC BY 4.0",
+      "attribution": "Thomas Bresson"
+    },
+    {
+      "file": "white_a-carton-of-caubles-eggs-nara-279961.jpg",
+      "label": "white: a carton of caubles eggs nara 279961",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:A_carton_of_Caubles%27_eggs_-_NARA_-_279961.jpg",
+      "license": "Public domain",
+      "attribution": "Tennessee Valley Authority"
+    },
+    {
+      "file": "white_2014-02-10-aftenm-lk-12622321964.jpg",
+      "label": "white: 2014 02 10 aftenm lk 12622321964",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:2014-02-10-Aftenm%C3%A6lk_(12622321964).jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "Ole Palnatoke Andersen"
+    },
+    {
+      "file": "white_a-glass-of-milk.jpg",
+      "label": "white: a glass of milk",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "purple"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:A_glass_of_milk.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Ngophuongthanh"
+    },
+    {
+      "file": "white_agregace-micel-kaseinu-v-ml-ce-p-i-zm-n-ph-p-i.jpg",
+      "label": "white: agregace micel kaseinu v ml ce p i zm n ph p i",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Agregace_micel_kaseinu_v_ml%C3%A9ce_p%C5%99i_zm%C4%9Bn%C4%9B_pH_p%C5%99id%C3%A1n%C3%ADm_kyseliny_octov%C3%A9.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "ZuzanaBrabcova"
+    },
+    {
+      "file": "white_bailey-s-frozen.jpg",
+      "label": "white: bailey s frozen",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "yellow",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Bailey%27s_frozen.jpg",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Tamilselvi v"
+    },
+    {
+      "file": "white_bir-bardak-s-t-ve-cadbury-f-nd-kl-ikolata.jpg",
+      "label": "white: bir bardak s t ve cadbury f nd kl ikolata",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "orange",
+        "yellow",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Bir_bardak_s%C3%BCt_ve_Cadbury_f%C4%B1nd%C4%B1kl%C4%B1_%C3%A7ikolata.jpg",
+      "license": "CC BY-SA 3.0",
+      "attribution": "Abuk SABUK"
+    },
+    {
+      "file": "white_bologna-sandwich.jpg",
+      "label": "white: bologna sandwich",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "blue",
+        "purple",
+        "pink"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:Bologna_sandwich.jpg",
+      "license": "CC BY 3.0",
+      "attribution": "Diderot's dreams"
+    },
+    {
+      "file": "white_c-9686750807.jpg",
+      "label": "white: c 9686750807",
+      "expect_pass": [
+        "white"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:C_(9686750807).jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Exey Panteleev"
+    },
+    {
+      "file": "black_13-italian-automotive-engineering-alfa-romeo-4.jpg",
+      "label": "black: 13 italian automotive engineering alfa romeo 4",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:%22_13_-_ITALIAN_automotive_engineering_-_Alfa_Romeo_4C_chassis_-_monocoque_carbon_fiber_-_aluminum_platform_(architecture)_DxO_08.jpg",
+      "license": "CC BY 2.0 it",
+      "attribution": "youkeys"
+    },
+    {
+      "file": "black_1-in-a-multiple-picture-set-7309983344.jpg",
+      "label": "black: 1 in a multiple picture set 7309983344",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:(1_in_a_multiple_picture_set)_(7309983344).jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "inkknife_2000 (7.5 million views +)"
+    },
+    {
+      "file": "black_panoramio-734.jpg",
+      "label": "black: panoramio 734",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:-_panoramio_(734).jpg",
+      "license": "CC BY 3.0",
+      "attribution": "daniel.b"
+    },
+    {
+      "file": "black_tire-story-loc-npcc-06425.jpg",
+      "label": "black: tire story loc npcc 06425",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:...)_tire_story_LOC_npcc.06425.jpg",
+      "license": "Public domain",
+      "attribution": "National Photo Company Collection"
+    },
+    {
+      "file": "black_1915-tacoma-speedway-pit-area-marvin-d-boland-.jpg",
+      "label": "black: 1915 tacoma speedway pit area marvin d boland ",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:1915_Tacoma_Speedway_Pit_Area_Marvin_D_Boland_Collection_SPEEDWAY078.jpg",
+      "license": "Public domain",
+      "attribution": "Marvin Dement Boland"
+    },
+    {
+      "file": "black_1965-ford-mustang-fastback-wheel.jpg",
+      "label": "black: 1965 ford mustang fastback wheel",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "orange",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:1965_Ford_Mustang_Fastback_Wheel.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "RadialSkid"
+    },
+    {
+      "file": "black_1968-ford-falcon-wheel-with-bf-goodrich-tire.jpg",
+      "label": "black: 1968 ford falcon wheel with bf goodrich tire",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "orange",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:1968_Ford_Falcon_Wheel_with_BF_Goodrich_Tire.jpg",
+      "license": "CC BY-SA 2.0",
+      "attribution": "70_musclecar_RT+6"
+    },
+    {
+      "file": "black_1986-ford-f150-wheels-01.jpg",
+      "label": "black: 1986 ford f150 wheels 01",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:1986_Ford_F150_wheels_01.JPG",
+      "license": "CC BY-SA 4.0",
+      "attribution": "WayneRay"
+    },
+    {
+      "file": "black_1986-ford-f150-wheels-02.jpg",
+      "label": "black: 1986 ford f150 wheels 02",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "green",
+        "blue"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:1986_Ford_F150_wheels_02.JPG",
+      "license": "CC BY-SA 4.0",
+      "attribution": "WayneRay"
+    },
+    {
+      "file": "black_1986-ford-f150-wheels-05.jpg",
+      "label": "black: 1986 ford f150 wheels 05",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "yellow",
+        "green"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:1986_Ford_F150_wheels_05.JPG",
+      "license": "CC BY-SA 4.0",
+      "attribution": "WayneRay"
+    },
+    {
+      "file": "black_1996-bmw-m6-wheel.jpg",
+      "label": "black: 1996 bmw m6 wheel",
+      "expect_pass": [
+        "black"
+      ],
+      "expect_fail": [
+        "red",
+        "orange",
+        "yellow"
+      ],
+      "source": "https://commons.wikimedia.org/wiki/File:1996_BMW_M6_Wheel.jpg",
+      "license": "CC BY 2.0",
+      "attribution": "Nan Palmero"
     }
   ]
 }
