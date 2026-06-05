@@ -101,13 +101,16 @@ public struct ColorDetector: Sendable {
     /// For chromatic colors, the minimum brightness a pixel needs (rejects near-black).
     public var minChromaValue: Double
 
-    // Defaults are intentionally LENIENT: a small patch of the color anywhere in
-    // a busy photo should count, and a wide range of shades (pale → deep) of a
-    // color should all match. Tighten these if matching feels too loose.
-    public init(minMatchFraction: Double = 0.03,
-                minBlobFraction: Double = 0.02,
-                minChromaSaturation: Double = 0.20,
-                minChromaValue: Double = 0.18) {
+    // Defaults are intentionally LENIENT — the design rule is "rather pass than
+    // fail." A small patch of the color anywhere in a busy photo should count,
+    // and a wide range of shades (pale → deep, and crucially DIM) should match.
+    // The brightness/saturation floors are kept low on purpose so colors still
+    // register in LOW LIGHT, where a kid's camera produces dark, washed-out
+    // pixels. Tighten these only if matching feels too loose.
+    public init(minMatchFraction: Double = 0.012,
+                minBlobFraction: Double = 0.008,
+                minChromaSaturation: Double = 0.10,
+                minChromaValue: Double = 0.06) {
         self.minMatchFraction = minMatchFraction
         self.minBlobFraction = minBlobFraction
         self.minChromaSaturation = minChromaSaturation
@@ -152,12 +155,15 @@ public struct ColorDetector: Sendable {
 
         switch color {
         case .white:
-            // Low saturation, bright. Tightened a touch (was 0.22) so pale
-            // PASTELS — pale pink, peach, lavender — are NOT swallowed by white.
-            return c.s <= 0.16 && c.v >= 0.74
+            // Low saturation, bright-ish. Brightness floor pushed down to 0.55
+            // so a white object in DIM light (rendered light-gray by the camera)
+            // still reads white. Saturation stays capped at 0.16 so pale PASTELS
+            // (pink, peach, lavender) aren't swallowed by white.
+            return c.s <= 0.16 && c.v >= 0.55
         case .black:
-            // Dark, regardless of hue. Relaxed so deep shadows/charcoal count.
-            return c.v <= 0.28
+            // Dark, regardless of hue. Generous (v ≤ 0.32) so deep shadows,
+            // charcoal, and dimly-lit dark objects all count as black.
+            return c.v <= 0.32
         case .pink:
             // Pink is a light/pale red, not a single hue — handled on its own.
             return isPink(c)

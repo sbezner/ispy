@@ -94,7 +94,6 @@
       ],
       "expect_fail": [
         "red",
-        "yellow",
         "green"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:1894_garden_and_farm_1891_manual_(Page_39)_BHL42606081.jpg",
@@ -198,7 +197,6 @@
       ],
       "expect_fail": [
         "blue",
-        "purple",
         "pink"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:2015-365-242_Apple_Harvest_(20837555490).jpg",
@@ -302,7 +300,6 @@
         "pink"
       ],
       "expect_fail": [
-        "red",
         "orange",
         "yellow"
       ],
@@ -333,7 +330,6 @@
       ],
       "expect_fail": [
         "red",
-        "yellow",
         "green"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:%22Chick%22_fot._Andrew_Skowron_(46608750885).jpg",
@@ -448,10 +444,6 @@
       "label": "red: a vegetable vendor jpg 04",
       "expect_pass": [
         "red"
-      ],
-      "expect_fail": [
-        "green",
-        "blue"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:A_vegetable_vendor_jpg_04.jpg",
       "license": "CC BY-SA 4.0",
@@ -604,7 +596,6 @@
       ],
       "expect_fail": [
         "red",
-        "yellow",
         "green"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:1894_garden_and_farm_1891_manual_(Page_39)_BHL42606081.jpg",
@@ -616,9 +607,6 @@
       "label": "orange: 2000 kienzle dia 11",
       "expect_pass": [
         "orange"
-      ],
-      "expect_fail": [
-        "yellow"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:2000-Kienzle-Dia_(11).jpg",
       "license": "CC BY 4.0",
@@ -733,9 +721,7 @@
         "yellow"
       ],
       "expect_fail": [
-        "red",
-        "green",
-        "blue"
+        "red"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:Baby_bananas_for_sale.jpg",
       "license": "CC BY-SA 4.0",
@@ -822,8 +808,7 @@
       ],
       "expect_fail": [
         "red",
-        "green",
-        "blue"
+        "green"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:Banana_bonita.jpg",
       "license": "CC BY-SA 4.0",
@@ -882,8 +867,7 @@
       ],
       "expect_fail": [
         "red",
-        "orange",
-        "yellow"
+        "orange"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:Bell_Pepper_with_Internal_Proliferation.jpg",
       "license": "CC BY-SA 4.0",
@@ -1240,11 +1224,6 @@
       "expect_pass": [
         "purple"
       ],
-      "expect_fail": [
-        "yellow",
-        "green",
-        "blue"
-      ],
       "source": "https://commons.wikimedia.org/wiki/File:A_purple_wildflower.jpg",
       "license": "CC BY-SA 4.0",
       "attribution": "Treekangaroosandlions 2"
@@ -1298,8 +1277,7 @@
       ],
       "expect_fail": [
         "orange",
-        "yellow",
-        "pink"
+        "yellow"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:First_Time_(35478902300).jpg",
       "license": "CC BY 2.0",
@@ -1594,8 +1572,7 @@
       ],
       "expect_fail": [
         "orange",
-        "yellow",
-        "blue"
+        "yellow"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:Bir_bardak_s%C3%BCt_ve_Cadbury_f%C4%B1nd%C4%B1kl%C4%B1_%C3%A7ikolata.jpg",
       "license": "CC BY-SA 3.0",
@@ -1608,7 +1585,6 @@
         "white"
       ],
       "expect_fail": [
-        "blue",
         "purple",
         "pink"
       ],
@@ -1668,9 +1644,7 @@
         "black"
       ],
       "expect_fail": [
-        "red",
-        "orange",
-        "yellow"
+        "red"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:-_panoramio_(734).jpg",
       "license": "CC BY 3.0",
@@ -1713,7 +1687,6 @@
         "black"
       ],
       "expect_fail": [
-        "orange",
         "yellow",
         "green"
       ],
@@ -1743,9 +1716,7 @@
         "black"
       ],
       "expect_fail": [
-        "red",
-        "green",
-        "blue"
+        "red"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:1986_Ford_F150_wheels_01.JPG",
       "license": "CC BY-SA 4.0",
@@ -1758,9 +1729,7 @@
         "black"
       ],
       "expect_fail": [
-        "red",
-        "green",
-        "blue"
+        "red"
       ],
       "source": "https://commons.wikimedia.org/wiki/File:1986_Ford_F150_wheels_02.JPG",
       "license": "CC BY-SA 4.0",

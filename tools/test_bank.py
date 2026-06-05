@@ -39,10 +39,10 @@ except ImportError:
 #  PORT OF ColorDetector.swift  (keep these in sync with the Swift source)
 # ---------------------------------------------------------------------------
 SAMPLE_SIZE = 100                 # ImageAnalyzer.sampleSize
-MIN_MATCH_FRACTION = 0.03         # ColorDetector.minMatchFraction
-MIN_BLOB_FRACTION = 0.02          # ColorDetector.minBlobFraction
-MIN_CHROMA_SATURATION = 0.20      # ColorDetector.minChromaSaturation
-MIN_CHROMA_VALUE = 0.18           # ColorDetector.minChromaValue
+MIN_MATCH_FRACTION = 0.012         # ColorDetector.minMatchFraction
+MIN_BLOB_FRACTION = 0.008          # ColorDetector.minBlobFraction
+MIN_CHROMA_SATURATION = 0.10      # ColorDetector.minChromaSaturation
+MIN_CHROMA_VALUE = 0.06           # ColorDetector.minChromaValue
 
 COLORS = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "white", "black"]
 
@@ -99,9 +99,9 @@ def is_pink(c):
 def pixel_matches(c, color):
     h, s, v = c
     if color == "white":
-        return s <= 0.16 and v >= 0.74
+        return s <= 0.16 and v >= 0.55
     if color == "black":
-        return v <= 0.28
+        return v <= 0.32
     if color == "pink":
         return is_pink(c)
     if s < saturation_floor(color) or v < MIN_CHROMA_VALUE:
