@@ -1,0 +1,48 @@
+Test fixtures for ImageAnalyzerTests — one representative photo per color,
+downscaled to <=256px from the Photos/ test bank. All are PD/CC0/CC-BY from
+Wikimedia Commons; full per-image credits below (see Photos/manifest.json).
+
+red.jpg
+  license: CC BY-SA 4.0
+  author : Gaztarrotz
+  source : https://commons.wikimedia.org/wiki/File:Adaskako_tomatea.jpg
+
+orange.jpg
+  license: Public domain
+  author : Henry G. Gilbert Nursery and Seed Trade Catalog Collection.; Johnson & Stokes.
+  source : https://commons.wikimedia.org/wiki/File:1894_garden_and_farm_1891_manual_(Page_39)_BHL42606081.jpg
+
+yellow.jpg
+  license: CC BY 2.0
+  author : Basheer Olakara
+  source : https://commons.wikimedia.org/wiki/File:BaNa..._(3806777363).jpg
+
+green.jpg
+  license: CC BY-SA 4.0
+  author : Thamizhpparithi Maari
+  source : https://commons.wikimedia.org/wiki/File:Aesthetic_bell_peppers.jpg
+
+blue.jpg
+  license: CC0
+  author : Alabama Extension
+  source : https://commons.wikimedia.org/wiki/File:Blueberries_(52187526180).jpg
+
+purple.jpg
+  license: CC BY 2.5
+  author : Wildfeuer
+  source : https://commons.wikimedia.org/wiki/File:2007-02-15Helleborus03.jpg
+
+pink.jpg
+  license: CC BY-SA 3.0
+  author : Wikimedia Commons
+  source : https://commons.wikimedia.org/wiki/File:Balloons-KayEss-1.jpeg
+
+white.jpg
+  license: CC BY 2.0
+  author : Otwarte Klatki
+  source : https://commons.wikimedia.org/wiki/File:%22_fot._Andrew_Skowron_(46608750885).jpg
+
+black.jpg
+  license: CC BY 2.0 it
+  author : youkeys
+  source : https://commons.wikimedia.org/wiki/File:%22_13_-_ITALIAN_automotive_engineering_-_Alfa_Romeo_4C_chassis_-_monocoque_carbon_fiber_-_aluminum_platform_(architecture)_DxO_08.jpg
