@@ -23,8 +23,16 @@ struct ContentView: View {
             // Cap content width so an iPad doesn't float tiny controls in a sea
             // of space; center it.
             let contentWidth = min(geo.size.width, 700)
-            let circleSize = min(contentWidth * 0.55, 320)
-            let shutterSize = min(contentWidth * 0.42, 220)
+            // Size the big elements to the available HEIGHT too — not just width —
+            // so the whole column always fits and the shutter never spills off
+            // the bottom on shorter screens. Caps keep them from getting huge on
+            // iPad.
+            let h = geo.size.height
+            let circleSize = min(contentWidth * 0.50, h * 0.19, 300)
+            let cameraHeight = min(contentWidth * 0.60, h * 0.21, 240)
+            let shutterSize = min(contentWidth * 0.40, h * 0.16, 200)
+            // Keep the shutter clear of the home indicator.
+            let bottomInset = max(geo.safeAreaInsets.bottom, 16)
 
             ZStack {
                 background
@@ -40,7 +48,7 @@ struct ContentView: View {
 
                     Spacer(minLength: 8)
 
-                    cameraWindow
+                    cameraWindow(height: cameraHeight)
                         .frame(maxWidth: contentWidth)
                         .padding(.horizontal, 20)
 
@@ -51,7 +59,7 @@ struct ContentView: View {
                     Spacer(minLength: 12)
 
                     shutterButton(size: shutterSize)
-                        .padding(.bottom, 24)
+                        .padding(.bottom, bottomInset)
                 }
                 .frame(maxWidth: contentWidth)
                 .frame(maxWidth: .infinity) // center the capped column
@@ -139,7 +147,7 @@ struct ContentView: View {
         }
     }
 
-    private var cameraWindow: some View {
+    private func cameraWindow(height: CGFloat) -> some View {
         ZStack {
             if game.camera.status == .authorized {
                 CameraPreviewView(session: game.camera.session)
@@ -150,7 +158,7 @@ struct ContentView: View {
                 ProgressView().tint(.white)
             }
         }
-        .frame(height: 220)
+        .frame(height: height)
         .clipShape(RoundedRectangle(cornerRadius: 28, style: .continuous))
         .overlay(RoundedRectangle(cornerRadius: 28, style: .continuous)
             .strokeBorder(.white, lineWidth: 6))
@@ -178,7 +186,7 @@ struct ContentView: View {
             .multilineTextAlignment(.center)
             .foregroundStyle(feedbackColor)
             .padding(.horizontal, 24)
-            .frame(minHeight: 70)
+            .frame(minHeight: 52)
             .id(game.message) // re-trigger transition on change
             .transition(.scale.combined(with: .opacity))
             .animation(.spring, value: game.message)

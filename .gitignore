@@ -11,3 +11,7 @@ xcuserdata/
 
 # Swift
 .build/
+
+# Stray screenshots
+ss.png
+*_screenshot.png
